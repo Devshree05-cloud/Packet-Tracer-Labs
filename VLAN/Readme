@@ -1,16 +1,16 @@
 Instructions and actions: 
 
-Configure the switch interfaces connected to PCs as access ports in the correct VLAN.
+1. Configure the switch interfaces connected to PCs as access ports in the correct VLAN.
 
 First, I checked that the default gateways, IP addresses and subnet masks were given properly to the pc’s.
 
 And then used "switchport mode access" "switchport access vlan [vlan number]"
 
-Configure the connection between SW1 and SW2 as a trunk, allowing only the necessary VLANs.
+2. Configure the connection between SW1 and SW2 as a trunk, allowing only the necessary VLANs.
 
 "switchport mode trunk" (no encapsulation dot1q detail was needed), "switchport trunk allowed vlan [vlan numbers]"
 
-Configure an unused VLAN as the native VLAN.
+3. Configure an unused VLAN as the native VLAN.
 
 "switchport trunk native vlan 1001"
 
@@ -18,7 +18,7 @@ At Switch 2, when we introduce 10 and 30 as trunk ports, it recognises 10 becaus
 
 "vlan 30"
 
-Configure the connection between SW2 and R1 using 'router on a stick'. 
+4. Configure the connection between SW2 and R1 using 'router on a stick'. 
 
 First I used the "no shutdown" on the g0/0 interface of R1. And then divided it into three subinterfaces, one for each vlan.
 
