@@ -1,1 +1,33 @@
+Instructions and actions: 
 
+Configure the switch interfaces connected to PCs as access ports in the correct VLAN.
+
+First, I checked that the default gateways, IP addresses and subnet masks were given properly to the pc’s.
+
+And then used "switchport mode access" "switchport access vlan [vlan number]"
+
+Configure the connection between SW1 and SW2 as a trunk, allowing only the necessary VLANs.
+
+"switchport mode trunk" (no encapsulation dot1q detail was needed), "switchport trunk allowed vlan [vlan numbers]"
+
+Configure an unused VLAN as the native VLAN.
+
+"switchport trunk native vlan 1001"
+
+At Switch 2, when we introduce 10 and 30 as trunk ports, it recognises 10 because it is directly connected to it and mentioned in the access port. So, just create a VLAN 30 there too with a simple command. 
+
+"vlan 30"
+
+Configure the connection between SW2 and R1 using 'router on a stick'. 
+
+First I used the "no shutdown" on the g0/0 interface of R1. And then divided it into three subinterfaces, one for each vlan.
+
+"int g/0.10
+encapsulation dot1q 10 (vlan)
+ip address 10.0.0.62 255.255.255.192"
+
+Tried to ping. Didn’t work, mistake – I forgot to assign the VLANs at the g0/2 interface of SW2. (Using trunk mode)
+
+I used "switchport trunk allowed vlan 10,20,30" on the g0/2 interface of SW2.
+
+Lab is working well now. All PCs can ping each other.
