@@ -25,7 +25,9 @@ For domain name – “vtp domain CCNA”
 In the global configuration mode:
 
 #vlan 10
+
 #vlan 20
+
 #vlan 30
 
 To recheck:
@@ -51,5 +53,7 @@ No, it displayed “VTP VLAN configuration not allowed when device is in CLIENT 
 9. Configure all switchports connected to hosts in the correct VLAN.
     
 #int (int name)
+
 #switchport mode access     (this is the command which turns off the DTP on the particular interface)
+
 #switchport access vlan (vlan number)
