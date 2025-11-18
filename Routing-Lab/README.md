@@ -11,8 +11,8 @@ Router interfaces are administratively down by default, so I manually brought th
 no shutdown
 
 Next, I configured static routes using the ip route command. I initially represented it like this to highlight an important learning point:
-ip route [destination IP address]/[source IP address] [subnet mask] [next hop]/[last hop]
+ip route [destination IP address] [subnet mask] [next hop]
 
-Here, the / was used to indicate that the exact address depended on the situation—whether PC1 was sending a message to PC2 or vice versa. I made some mistakes at first, but after configuring all three routers, I understood the logic and the difference between directly connected networks and static routes.
+I made some mistakes at first, but after configuring all three routers, I understood the logic and the difference between directly connected networks and static routes.
 
 Finally, the PCs were able to ping each other successfully, confirming the setup was correct.
