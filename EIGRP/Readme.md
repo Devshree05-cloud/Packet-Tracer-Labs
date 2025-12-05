@@ -11,6 +11,6 @@ Under the router eigrp command, ip addresses with wildcard masks were configured
 
 Loopback interface and other interfaces with no important router were made passive interfaces to avoid unnecessary messaging. 
 
-At last, the command "variance 2" in the config-router mode was used to configure the alternate path if the best path link in eigrp fails. The command states that the feasible distance of the feasible successor must be lesser than or equal to the twice of feasible distance of the successor.
+At last, the command "variance 2" in the config-router mode was used to configure the alternate path if the best path link in eigrp fails. The command states that the reported distance of the feasible successor must be lesser than or equal to the twice of feasible distance of the successor.
 
 
