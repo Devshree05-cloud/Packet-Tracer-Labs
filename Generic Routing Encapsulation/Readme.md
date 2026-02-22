@@ -24,5 +24,5 @@ Lab worked successfully, PC1 and PC2 are able to ping each other.
 
 Basically, GRE tunnels use the same path, but they are created virtually so that traffic is encapsulated in a GRE header over the entire route.
 
-Once again, kindly review the PDF. 
+Once again, kindly review the detailed PDF. 
 
